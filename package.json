@@ -1,0 +1,24 @@
+{
+  "name": "meat-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owwo/meat-dashboard.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/owwo/meat-dashboard/issues"
+  },
+  "homepage": "https://github.com/owwo/meat-dashboard#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "html5shiv": "^3.7.3",
+    "ionicons": "^3.0.0",
+    "jquery": "^3.1.1",
+    "respond.js": "^1.4.2"
+  }
+}
