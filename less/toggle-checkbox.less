@@ -4,8 +4,8 @@
   height: 1em;
   position: relative;
   border-radius: 1em;
-  border: 0.1em solid @input-border;
-  vertical-align: top;
+  border: 1px solid @input-border;
+  box-sizing: content-box;
 }
 
 .toggle-checkbox > input {
@@ -16,14 +16,14 @@
   transition: left .3s;
 
   display: block;
-  width: .8em;
-  height: .8em;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
   position: absolute;
   top: 0;
   left: 0;
 
-  border: 0.1em solid transparent;
+  border: 2px solid transparent;
 }
 
 .toggle-checkbox > span:after {
