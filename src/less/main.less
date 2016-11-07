@@ -1,0 +1,55 @@
+//
+// bootstrap 默认风格
+// --------------------------------------------------
+@import "~bootstrap/less/bootstrap.less";
+
+//
+// font-awesome 图标库
+// --------------------------------------------------
+@import "~font-awesome/less/font-awesome.less";
+
+@navbar-outer-height: @navbar-height + 1;
+@sidebar-width: 250px;
+@zindex-sidebar: @zindex-navbar-fixed;
+
+.dashboard {
+  padding-top: @navbar-outer-height;
+  &:extend(.clearfix all);
+  > .content {
+    margin-left: @sidebar-width;
+  }
+
+  .navbar-brand {
+    &:extend(.text-center all);
+    width: @sidebar-width;
+  }
+}
+
+.sidebar {
+  z-index: @zindex-sidebar;
+  width: @sidebar-width;
+  position: fixed;
+  top: @navbar-outer-height;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background-color: #f8f8f8;
+
+  border-right: 1px solid #e7e7e7;
+
+  ul {
+    &:extend(.list-unstyled all);
+    > li a {
+      &:hover {
+        text-decoration: none;
+      }
+
+      display: block;
+      padding: 10px 25px;
+    }
+  }
+}
+
+.content {
+
+}

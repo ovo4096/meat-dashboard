@@ -3,7 +3,7 @@ const webpackMerge = require("webpack-merge");
 
 module.exports = webpackMerge(webpackConfig, {
   devServer: {
-    noInfo: true,
+    // noInfo: true,
     open: true,
     inline: true
   },
