@@ -1,24 +1,32 @@
 {
   "name": "meat-dashboard",
-  "version": "1.0.7",
-  "description": "",
-  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/owwo/meat-dashboard.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/owwo/meat-dashboard/issues"
   },
   "homepage": "https://github.com/owwo/meat-dashboard#readme",
-  "dependencies": {
+  "devDependencies": {
+    "autoprefixer": "^6.5.2",
     "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3",
-    "html5shiv": "^3.7.3",
-    "ionicons": "^3.0.0",
-    "jquery": "^3.1.1",
-    "respond.js": "^1.4.2"
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^1.1.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.15.0"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "build": "rm -rf dist && webpack --config build/webpack.prod.js"
   }
 }
