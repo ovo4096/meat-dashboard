@@ -55,12 +55,18 @@
 
   > ul {
     &:extend(.list-unstyled all);
+    > li {
+      &.active > ul {
+        height: auto;
+      }
+    }
     > li > a {
-
       padding: 10px 25px;
     }
     > li ul {
       &:extend(.list-unstyled all);
+      height: 0;
+      overflow: hidden;
       > li {
         position: relative;
       }
