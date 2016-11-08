@@ -2,15 +2,22 @@
 // bootstrap 默认风格
 // --------------------------------------------------
 @import "~bootstrap/less/bootstrap.less";
-
 //
 // font-awesome 图标库
 // --------------------------------------------------
 @import "~font-awesome/less/font-awesome.less";
 
 @navbar-outer-height: @navbar-height + 1;
-@sidebar-width: 250px;
+
 @zindex-sidebar: @zindex-navbar-fixed;
+
+@sidebar-width: 240px;
+@sidebar-bg: #f8f8f8;
+@sidebar-border-color: #e7e7e7;
+@sidebar-color: #333;
+@sidebar-link-hover-color: #fff;
+@sidebar-link-hover-bg: #888;
+@sidebar-dashed-border-color: #606c77;
 
 .dashboard {
   padding-top: @navbar-outer-height;
@@ -33,19 +40,63 @@
   bottom: 0;
   left: 0;
   overflow: auto;
-  background-color: #f8f8f8;
+  background: @sidebar-bg;
+  border-right: 1px solid @sidebar-border-color;
 
-  border-right: 1px solid #e7e7e7;
+  ul > li > a {
+    &:hover, &:focus {
+      text-decoration: none;
+      color: @sidebar-link-hover-color;
+      background: @sidebar-link-hover-bg;
+    }
+    display: block;
+    color: @sidebar-color;
+  }
 
-  ul {
+  > ul {
     &:extend(.list-unstyled all);
-    > li a {
-      &:hover {
-        text-decoration: none;
-      }
+    > li > a {
 
-      display: block;
       padding: 10px 25px;
+    }
+    > li ul {
+      &:extend(.list-unstyled all);
+      > li {
+        position: relative;
+      }
+      > li:first-of-type > a {
+        &::before {
+          top: 5px;
+        }
+      }
+      > li:last-of-type > a {
+        &::before {
+          bottom: 15px;
+        }
+      }
+      > li > a {
+        padding: 5px 0 5px 55px;
+        &::before, &::after {
+          content: '';
+          display: block;
+          position: absolute;
+        }
+        &::before {
+          top: 0;
+          left: 34px;
+          bottom: 0;
+          border-left: 1px dashed @sidebar-dashed-border-color;
+        }
+        &::after {
+          top: 0;
+          bottom: 0;
+          left: 34px;
+          border-top: 1px dashed @sidebar-dashed-border-color;
+          width: 20px;
+          height: 1px;
+          margin: auto;
+        }
+      }
     }
   }
 }
